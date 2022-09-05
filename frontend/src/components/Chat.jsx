@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useParams, useLocation, useMatch } from "react-router-dom";
-import useChatRoom from "../hooks/useChatRoom";
+import React, { useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import useChatRoom from "../hooks/UseChatRoom";
 
 const Chat = () => {
   const { roomId } = useParams();
@@ -31,7 +31,10 @@ const Chat = () => {
     };
   }, {});
 
-  console.log(Object.keys(messagesByDate).sort());
+  const messagesDates = Object.keys(messagesByDate)
+    .map((key) => new Date(key))
+    .sort((a, b) => (a > b ? 1 : -1))
+    .map((d) => d.toLocaleDateString());
 
   return (
     <div className="chat">
@@ -42,111 +45,40 @@ const Chat = () => {
           overflowY: "auto",
         }}
       >
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
+        {messagesDates.map((d) => {
+          return (
+            <div key={d}>
+              <div className="day text-center my-3 text-warning fw-bold">
+                {new Date(d).toLocaleDateString("en-il", {
+                  weekday: "long",
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "2-digit",
+                })}
+              </div>
 
-        <div className="day text-center my-3 text-warning fw-bold">
-          THURSDAY, 22/05/2022
-        </div>
-
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div className="message">
-          <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">matan</span>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
+              {messagesByDate[d].map((message) => {
+                return (
+                  <React.Fragment
+                    key={String(message.sentAt) + message.senderId}
+                  >
+                    <div className="message">
+                      <span className="text-warning fw-bold me-2">
+                        {new Date(message.sentAt).toLocaleTimeString("en-il", {
+                          timeStyle: "short",
+                        })}
+                      </span>
+                      <span className="text-success fw-bold">
+                        {message.name}
+                      </span>
+                      <p>{message.body}</p>
+                    </div>
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
 
       <div className="message-input mt-3">
