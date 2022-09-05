@@ -1,4 +1,19 @@
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
 const StartChatForm = () => {
+  const form = useFormik({
+    initialValues: {
+      name: "",
+      room: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().min(2).max(20).required(),
+      room: Yup.string().min(5).max(50).required(),
+    }),
+    onSubmit() {},
+  });
+
   return (
     <div className="rooms">
       <div className="mb-2">
