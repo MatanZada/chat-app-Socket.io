@@ -1,7 +1,7 @@
 import "./App.css";
-import Chat from "./components/chat";
-import StartChatForm from "./components/startChatForm";
-import Navigation from "./components/navigation";
+import Chat from "./components/Chat";
+import StartChatForm from "./components/StartChatForm";
+import Navigation from "./components/Navigation";
 
 import { Routes, Route } from "react-router-dom";
 

@@ -1,4 +1,11 @@
+import { useParams, useLocation, useMatch } from "react-router-dom";
+
 const Chat = () => {
+  const params = useParams();
+  const location = useLocation();
+
+  console.log(params);
+  console.log(location);
   return (
     <div className="chat">
       <div
@@ -10,7 +17,7 @@ const Chat = () => {
       >
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
 
@@ -20,97 +27,97 @@ const Chat = () => {
 
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div className="message">
           <span className="text-warning fw-bold me-2">20:00</span>
-          <span className="text-success fw-bold">daniel</span>
+          <span className="text-success fw-bold">matan</span>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
