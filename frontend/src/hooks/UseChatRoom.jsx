@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 
 const SOCKET_SERVER = "ws://localhost:3005";
 
-const UseChatRoom = ({ roomId, name }) => {
+const useChatRoom = ({ roomId, name }) => {
   const [messages, setMessages] = useState([]);
   const socketRef = useRef();
 
@@ -36,4 +36,4 @@ const UseChatRoom = ({ roomId, name }) => {
 
   return { messages, sendMessage };
 };
-export default UseChatRoom;
+export default useChatRoom;
